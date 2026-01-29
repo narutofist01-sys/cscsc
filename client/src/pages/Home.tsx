@@ -11,7 +11,7 @@ export default function Home() {
     
     // Check for guild_id in URL or from state management
     const searchParams = new URLSearchParams(window.location.search);
-    const guildId = searchParams.get("guild_id") || "DEFAULT_GUILD_ID";
+    const guildId = searchParams.get("guild_id") || "1346467864143462430";
 
     const params = new URLSearchParams({
       client_id: clientId,
