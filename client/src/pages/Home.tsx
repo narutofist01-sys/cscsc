@@ -6,7 +6,7 @@ export default function Home() {
   // Using a placeholder URL structure for now as per instructions
   // In a real app, this should be the full OAuth2 URL
   const handleLogin = () => {
-    const clientId = import.meta.env.VITE_CLIENT_ID || '1432631501354434690';
+    const clientId = import.meta.env.VITE_CLIENT_ID || '1428989669688873083';
     const scopes = ["identify", "guilds", "guilds.join"];
     
     // Check for guild_id in URL or from state management
