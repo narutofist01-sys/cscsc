@@ -66,6 +66,13 @@ export async function registerRoutes(
       });
 
     } catch (error: any) {
+      if (error.response?.status === 429 || (error.response?.data && typeof error.response.data === 'string' && error.response.data.includes('1015'))) {
+        console.error('Discord Rate Limit hit (1015). User needs to wait.');
+        return res.status(429).json({ 
+          message: "Too many requests. Discord has temporarily rate limited this IP. Please wait a few minutes and try again.",
+          details: "Rate limit (1015) reached"
+        });
+      }
       console.error('OAuth Error:', error.response?.data || error.message);
       res.status(500).json({ 
         message: "Authentication failed", 
